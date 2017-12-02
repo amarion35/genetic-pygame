@@ -17,7 +17,7 @@ random.seed()
 
 speed_simulation = 2
 
-instance = 100
+iteration = 100
 duration = 5. / speed_simulation
 genome_size = 4
 size_pop = 100
@@ -56,7 +56,7 @@ def select_ships():
 
 def mutations():
     for i, ship in enumerate(ships):
-        ships[i].genome = [(g[0] + ((j+1*genome_size)/(2*genome_size))*(random.randrange(0, 100)/100. - 0.5)/speed_simulation*(1+ships[i].score**2+ships[i].score**3),
+        ships[i].genome = [(g[0] + ((j+1*genome_size)/(2*genome_size))*(random.randrange(0, 100)/100. - 0.5)/speed_simulation*(1+ships[i].score**2+0.4*ships[i].score**3),
                             g[1] + ((j+1*genome_size)/(2*genome_size))*(random.randrange(-10, 10))/(0.5+ships[i].score**2+ships[i].score**3))
                            for j, g in enumerate(ships[i].genome)]
     return ships
@@ -128,8 +128,8 @@ while not done:
         setSpeed(state)
         state += 1
 
-    if (all_ships_out() or time.clock() - t > duration) and instance > 0:
-        instance -= 1
+    if (all_ships_out() or time.clock() - t > duration) and iteration > 0:
+        iteration -= 1
         state = 0
         max_score_all_time = score(max_score_all_time)
         ships = select_ships()
