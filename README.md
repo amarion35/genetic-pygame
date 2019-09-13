@@ -14,3 +14,18 @@ duration : duration of one iteration in second
 genome_size : size of the genome or number of node in the path
 size_pop : size of the population
 size_surviving_pop : size of the population after selection
+
+# Dependencies
+
+* numpy
+* matplotlib
+* pygame
+* shapely
+
+# Run
+
+`python main.py`
+
+# Demo
+
+<img src="./demo.gif">
