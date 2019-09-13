@@ -76,7 +76,7 @@ class Ship:
         return result
 
     def is_inside(self, x, y):
-        if 0 <= x <= 800 and 0 <= y <= 600:
+        if 0 <= x <= 1000 and 0 <= y <= 800:
             return True
         return False
 

@@ -10,18 +10,18 @@ import time
 pygame.init()
 
 
-screen = pygame.display.set_mode([800, 600])
+screen = pygame.display.set_mode([1000, 800])
 done = False
 clock = pygame.time.Clock()
 random.seed()
 
-speed_simulation = 2
+speed_simulation = 5
 
 iteration = 100
 duration = 5. / speed_simulation
 genome_size = 4
 size_pop = 100
-size_surviving_pop = size_pop // 3
+size_surviving_pop = size_pop // 2
 
 state = 0
 target = Target(screen, 700, 500)
